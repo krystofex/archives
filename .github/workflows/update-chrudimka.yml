@@ -1,13 +1,11 @@
-name: Update biketower data
+name: Update data
 
 on:
   schedule:
-    - cron:  '*/30 * * * *'
-  push:
-    branches: [main]
+    - cron:  '0,30 11,12 * * *' 
 
 jobs:
-  cron: 
+  cron:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -16,9 +14,9 @@ jobs:
       with:
         node-version: 16.x
     - run: |
-        cd biketower
+        cd chrudimka
         npm install
-        node index.js
+        node main.js
       # commit changes
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:

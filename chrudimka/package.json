@@ -1,0 +1,22 @@
+{
+    "name": "chrudimka-river-temperature-archive",
+    "version": "1.0.0",
+    "description": "Archive of Chrudimka river temperatures for my dad :D",
+    "main": "main.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/krystofex/Chrudimka-river-temperature-archive.git"
+    },
+    "author": "Krystof Kratky",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/krystofex/Chrudimka-river-temperature-archive/issues"
+    },
+    "homepage": "https://github.com/krystofex/Chrudimka-river-temperature-archive#readme",
+    "dependencies": {
+      "puppeteer": "^11.0.0"
+    }
+  }
