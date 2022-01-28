@@ -1,22 +1,21 @@
 {
-    "name": "bike-tower",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/open-Pardubice/bike-tower.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/open-Pardubice/bike-tower/issues"
-    },
-    "homepage": "https://github.com/open-Pardubice/bike-tower#readme",
-    "dependencies": {
-      "puppeteer": "^10.4.0"
-    }
+  "name": "biketower-archive",
+  "version": "1.0.0", 
+  "main": "main.js",
+  "scripts": {
+    "update": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krystofex/Chrudimka-river-temperature-archive.git"
+  },
+  "author": "Krystof Kratky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krystofex/Chrudimka-river-temperature-archive/issues"
+  },
+  "homepage": "https://github.com/krystofex/Chrudimka-river-temperature-archive#readme",
+  "dependencies": {
+    "puppeteer": "^11.0.0"
   }
+}

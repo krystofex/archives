@@ -1,11 +1,13 @@
-name: Update data
+name: Update
 
 on:
   schedule:
-    - cron:  '0,30 11,12 * * *' 
+    - cron:  '*/30 * * * *'
+  push:
+    branches: [main]
 
 jobs:
-  cron:
+  cron: 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,9 +16,12 @@ jobs:
       with:
         node-version: 16.x
     - run: |
-        cd chrudimka
-        npm install
-        node main.js
+        npm install -g pnpm --no-frozen-lockfile
+        pnpm recursive install --no-frozen-lockfile
+        cd biketower
+        npm run update
+        cd ../chrudimka
+        npm run update
       # commit changes
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
@@ -24,3 +29,5 @@ jobs:
         commit_author: Author <actions@github.com>
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+ 

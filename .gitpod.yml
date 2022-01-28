@@ -1,0 +1,7 @@
+# Commands to start on workspace startup
+tasks:
+  - name: Setup
+    init: >
+      npm install -g pnpm --no-frozen-lockfile;
+      pnpm recursive install --no-frozen-lockfile;
+    command: echo "Setup done"
