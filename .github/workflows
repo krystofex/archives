@@ -1,0 +1,26 @@
+name: Update data
+
+on:
+  schedule:
+    - cron:  '*/30 * * * *'
+  push:
+    branches: [master]
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update data
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+    - run: npm install
+    - run: node index.js
+      # commit changes
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automated update   
+        commit_author: Author <actions@github.com>
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
