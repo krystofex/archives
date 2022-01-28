@@ -1,10 +1,10 @@
-name: Update data
+name: Update biketower data
 
 on:
   schedule:
     - cron:  '*/30 * * * *'
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   cron:
@@ -15,6 +15,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
+    - run: cd biketower
     - run: npm install
     - run: node index.js
       # commit changes
