@@ -5,7 +5,7 @@ const dataLocation = "../data/chrudimka/data.csv";
 
 var stream = fs.createWriteStream(dataLocation, { flags: "a" }); // create a writable stream
 const data = fs.readFileSync(dataLocation, "utf8"); // read file
-const lastRecord = data.split("\n").reverse()[0].split(",")[0]; // get timestamp of last record
+const lastRecord = data.split("\n").reverse()[1].split(",")[0]; // get timestamp of last record
 
 // main function
 (async () => {
